@@ -12,6 +12,10 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
 
+  body, input, button, textarea {
+    font-family: 'Roboto', sans-serif;
+  } 
+
   a {
     text-decoration: none;
   }
