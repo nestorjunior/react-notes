@@ -10,6 +10,7 @@ declare module 'styled-components' {
       GRAY_300: string;
       GRAY_100: string;
       RED: string;
+      WHITE: string;
     };
   }
 }
