@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   * {
@@ -8,28 +8,27 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
-    color: ${({ theme }) => theme.COLORS.WHITE};
+    background-color: #232129;
+    color: #FFFFFF;
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, button, textarea {
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 16px;
     outline: none;
-  } 
+  }
 
   a {
     text-decoration: none;
   }
 
-  a, button {
+  button, a {
     cursor: pointer;
     transition: filter 0.2s;
   }
 
-  a:hover, button:hover {
+  button:hover, a:hover {
     filter: brightness(0.9);
   }
-
-`
+`;
