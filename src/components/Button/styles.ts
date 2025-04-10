@@ -6,7 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
 }
 
-const ButtonContainer = styled.button<ButtonProps>`
+export const ButtonContainer = styled.button<ButtonProps>`
   background-color: ${({ theme, variant }) => 
     variant === 'ghost' ? 'transparent' : theme.colors.orange};
   color: ${({ theme, variant }) => 
@@ -25,17 +25,3 @@ const ButtonContainer = styled.button<ButtonProps>`
     opacity: 0.5;
   }
 `;
-
-const Button = ({ children, loading, ...rest }: ButtonProps) => {
-  return (
-    <ButtonContainer 
-      type="button" 
-      disabled={loading} 
-      {...rest}
-    >
-      {loading ? 'Carregando...' : children}
-    </ButtonContainer>
-  );
-};
-
-export default Button;

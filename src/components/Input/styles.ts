@@ -1,18 +1,12 @@
-import { forwardRef, InputHTMLAttributes } from "react";
 import styled from "styled-components";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  icon?: React.ReactNode;
-  error?: string;
-}
-
-const Container = styled.div`
+export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
 
-const InputContainer = styled.div`
+export const InputContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.inputBackground};
   border-radius: 10px;
   padding: 0 16px;
@@ -33,7 +27,7 @@ const InputContainer = styled.div`
   }
 `;
 
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   background: transparent;
   border: 0;
   flex: 1;
@@ -45,24 +39,8 @@ const StyledInput = styled.input`
   }
 `;
 
-const ErrorMessage = styled.span`
+export const ErrorMessage = styled.span`
   color: ${({ theme }) => theme.colors.red};
   margin-top: 4px;
   font-size: 14px;
 `;
-
-const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ icon, error, ...rest }, ref) => (
-    <Container>
-      <InputContainer>
-        {icon}
-        <StyledInput ref={ref} {...rest} />
-      </InputContainer>
-      {error && <ErrorMessage>{error}</ErrorMessage>}
-    </Container>
-  )
-);
-
-Input.displayName = 'Input';
-
-export default Input;
